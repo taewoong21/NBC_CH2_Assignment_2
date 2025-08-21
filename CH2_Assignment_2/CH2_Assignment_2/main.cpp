@@ -45,11 +45,38 @@ int main() {
         cout << "잘못된 입력입니다." << endl;
         return 1;
     }
-
-    player->attack();
+    cout << endl;
     player->printPlayerStatus();
+    cout << endl;
+    player->attack();
+    cout << endl;
+    
 
-    delete player;
+    // 몬스터 출현 시나리오
+    Monster* monster = new Monster("고블린");
+    cout << "[주의] 몬스터가 출현했습니다." << endl;
+
+    monster->attack(player);
+    cout << endl;
+
+    player->attack(monster);
+    cout << endl;
+    player->attack(monster);
+    cout << endl;
+
+    monster->attack(player);
+    cout << endl;
+
+    player->attack(monster);
+    cout << endl;
+ 
+    player->attack(monster);
+    cout << endl;
+
+    
+
+    delete player; 
+    delete monster;
 
     return 0;
 }
